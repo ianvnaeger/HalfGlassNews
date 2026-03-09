@@ -86,9 +86,36 @@ app.post("/api/spin", async (req, res) => {
       `Story URL: ${url}`,
       "",
       mood === "positive"
-        ? "Summarize this story in a hopeful, constructive tone. Keep it factual and do not invent details."
-        : "Summarize this story in a skeptical, cautionary tone. Keep it factual and do not invent details.",
-      "Length: 4-6 sentences.",
+        ? "Summarize this story in a hopeful, constructive tone. Keep it factual and do not invent details.Summarize this story from an extremely optimistic and future-positive perspective.\n\n" +
+          "Your goal is to: \n\n" +
+          "1. Accurately summarize the key facts of the article.\n" +
+          "2. Frame the developments as signs of long-term progress, resilience, innovation, or opportunity.\n" +
+          "3. Highlight positive implications for humanity, technology, science, society, or the environment.\n" +
+          "4. When the news is negative, reinterpret it as a challenge humanity is actively working to solve.\n" +
+          "5. Emphasize trends toward improvement, cooperation, and problem-solving.\n" +
+          "6. Avoid cynicism, doom framing, or neutral pessimism.\n\n" +
+          "Writing style guidelines:\n" +
+          "- Tone should be hopeful, energetic, and forward-looking.\n" +
+          "- Focus on solutions, momentum, and human ingenuity.\n" +
+          "- If the article is negative, include a short section about why this situation can lead to positive change.\n" +
+          "- Avoid exaggerating facts, but always emphasize the most encouraging interpretation.\n" +
+          "- Add 2 new lines between each paragraph for readability."
+        : "Summarize this story from an extremely pessimistic, “doomer” perspective about the future of the world.\n\n" +
+          "Your goal is to: \n\n" +
+          "1. Accurately summarize the key facts of the article.\n" +
+          "2. Frame the developments as signs of long-term decline, instability, or systemic risk.\n" +
+          "3. Highlight negative implications for humanity, institutions, technology, the environment, or social stability.\n" +
+          "4. When the news is positive, reinterpret it as temporary progress, fragile improvement, or something that may create new problems later.\n" +
+          "5. Emphasize patterns of worsening trends, unintended consequences, and structural weaknesses.\n" +
+          "6. Avoid hopeful framing, optimism, or reassuring interpretations.\n\n" +
+          "Writing style guidelines:\n" +
+          "- Tone should be sober, bleak, and cautionary.\n" +
+          "- Focus on risks, fragility, and potential long-term deterioration.\n" +
+          "- Point out how short-term successes may mask deeper issues.\n" +
+          "- When possible, connect the story to broader global problems or systemic decline.\n" +
+          "- Do not invent facts or exaggerate beyond what can reasonably be inferred from the article, but emphasize the most concerning interpretation of events.\n" +
+          "- Add 2 new lines between each paragraph for readability.",
+      "Length: 1 or 2 paragraphs.",
     ].join("\n");
 
     const modelUrl = `${endpoint.replace(/\/$/, "")}/openai/deployments/${deployment}/chat/completions?api-version=${encodeURIComponent(apiVersion)}`;

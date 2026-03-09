@@ -207,14 +207,14 @@ button:disabled {
 }
 
 .doomer-story-list {
-  background: #23272e;
-  border: 1px solid #444950;
+  /* background: #23272e; */
+  /* border: 1px solid #444950; */
   color: #d1d5db;
 }
 
 .bloomer-story-list {
-  background: #fffbe6;
-  border: 1px solid #ffe9a3;
+  /* background: #fffbe6; */
+  /* border: 1px solid #ffe9a3; */
   color: #3a3f47;
 }
 
@@ -226,20 +226,31 @@ button:disabled {
   gap: 0.45rem;
 }
 
-.story-list li button {
+.bloomer-story-list li button {
+  background: #fffbe6;
+  color: #3a3f47;
+  border: 1px solid #ffe9a3;
   width: 100%;
   text-align: left;
-  background: #f7faff;
-  color: #152033;
-  border: 1px solid #d9e3f2;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.7rem;
+}
+
+.doomer-story-list li button {
+  background: #23272e;
+  color: #d1d5db;
+  border: 1px solid #444950;
+  width: 100%;
+  text-align: left;
   display: flex;
   justify-content: space-between;
   gap: 0.7rem;
 }
 
 .story-list li button.active {
-  border-color: #1f6dd0;
-  background: #e8f1ff;
+  border: 3px solid #1f6dd0;
+  /* background: #e8f1ff; */
 }
 
 .story-list small {
@@ -253,6 +264,17 @@ button:disabled {
 
 .story-preview p {
   margin-top: 0;
+}
+
+.story-link {
+  display: inline-block;
+  margin-top: 0.8rem;
+  color: #1f6dd0;
+  text-decoration: none;
+  font-weight: 600;
+}
+.story-link:hover {
+  text-decoration: underline;
 }
 
 .spin-copy {

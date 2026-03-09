@@ -184,7 +184,7 @@ export default function App() {
               <div className="story-preview">
                 <h3>{selectedStory.title}</h3>
                 <p>{selectedStory.description || "No description available."}</p>
-                <a href={selectedStory.url} target="_blank" rel="noreferrer">
+                <a href={selectedStory.url} target="_blank" rel="noreferrer" className="story-link">
                   Open original source
                 </a>
               </div>
